@@ -248,7 +248,7 @@ BSKY_PUBLIC_URL="https://$DOMAIN"
 BSKY_SERVER_DID="did:web:$DOMAIN"
 BSKY_DID_PLC_URL="https://plc.directory"
 BSKY_DATAPLANE_URLS="http://localhost:2583"
-BSKY_BSYNC_URL="http://localhost:3002"
+BSKY_BSYNC_URL="http://localhost:2585"
 BSYNC_API_KEY="$(openssl rand -hex 32)"
 BSKY_BSYNC_API_KEY="$BSYNC_API_KEY"
 BSKY_SERVICE_SIGNING_KEY="did:key:zQ3shZc2QzApp2oymGvQbzP8eKheVshBHbU4ZYjeXqwSKEn6N"
@@ -288,7 +288,7 @@ EOF
           # Create BSync configuration
       cat > /opt/atproto/bsync/.env << EOF
 # BSync Configuration
-BSYNC_PORT=3002
+BSYNC_PORT=2585
 NODE_ENV=production
 BSYNC_VERSION="0.1.0"
 BSYNC_DB_POSTGRES_URL="postgresql://atproto:$DB_PASSWORD@localhost:5432/bsync"
