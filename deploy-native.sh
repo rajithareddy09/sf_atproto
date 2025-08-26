@@ -264,10 +264,20 @@ EOF
 # Ozone Configuration
 OZONE_PORT=3001
 NODE_ENV=production
-OZONE_DATABASE_URL="postgresql://atproto:$DB_PASSWORD@localhost:5432/ozone"
+OZONE_PUBLIC_URL="https://$DOMAIN"
+OZONE_SERVER_DID="did:web:$DOMAIN"
+OZONE_DB_POSTGRES_URL="postgresql://atproto:$DB_PASSWORD@localhost:5432/ozone"
+OZONE_DB_POSTGRES_SCHEMA="ozone"
+OZONE_APPVIEW_URL="http://localhost:3000"
+OZONE_APPVIEW_DID="did:web:$DOMAIN"
 OZONE_PDS_URL="http://localhost:2583"
+OZONE_PDS_DID="did:web:$DOMAIN"
+OZONE_DID_PLC_URL="https://plc.directory"
 OZONE_ADMIN_PASSWORD="$OZONE_ADMIN_PASSWORD"
-OZONE_SERVICE_DID="did:web:$DOMAIN"
+OZONE_ADMIN_DIDS="did:web:$DOMAIN"
+OZONE_MODERATOR_DIDS=""
+OZONE_TRIAGE_DIDS=""
+OZONE_SIGNING_KEY_HEX="$(openssl rand -hex 32)"
 LOG_ENABLED=1
 LOG_LEVEL=info
 EOF
@@ -277,8 +287,9 @@ EOF
 # BSync Configuration
 BSYNC_PORT=3002
 NODE_ENV=production
-BSYNC_PDS_URL="http://localhost:2583"
-BSYNC_SERVICE_DID="did:web:$DOMAIN"
+BSYNC_DB_POSTGRES_URL="postgresql://atproto:$DB_PASSWORD@localhost:5432/bsync"
+BSYNC_DB_POSTGRES_SCHEMA="bsync"
+BSYNC_DB_MIGRATE=true
 LOG_ENABLED=1
 LOG_LEVEL=info
 EOF
