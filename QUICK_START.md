@@ -13,9 +13,9 @@ AT Protocol (ATP) is a decentralized social media protocol developed by Bluesky 
 
 ## Quick Setup Options
 
-### Option 1: Automated Setup (Recommended)
+### Option 1: Docker-based Setup (Recommended for most users)
 
-Use the provided deployment script for a fully automated setup:
+Use the provided deployment script for a fully automated Docker-based setup:
 
 ```bash
 # Clone the repository
@@ -30,15 +30,47 @@ chmod +x deploy.sh
 ```
 
 The script will:
-- Install all required dependencies
+- Install Docker and Docker Compose
 - Generate cryptographic keys
-- Set up databases and services
+- Set up databases and services in containers
 - Configure Nginx and SSL
 - Start all services automatically
 
-### Option 2: Manual Setup
+### Option 2: Native Setup (Better Performance)
 
-Follow the detailed guide in `PRODUCTION_SETUP.md` for step-by-step manual configuration.
+For better performance and more control, use the native setup without Docker:
+
+```bash
+# Clone the repository
+git clone https://github.com/bluesky-social/atproto.git
+cd atproto
+
+# Make the native deployment script executable
+chmod +x deploy-native.sh
+
+# Run the native setup
+./deploy-native.sh
+```
+
+The native script will:
+- Install all dependencies directly on the system
+- Generate cryptographic keys
+- Set up PostgreSQL and Redis natively
+- Configure services with PM2 or systemd
+- Configure Nginx and SSL
+- Start all services automatically
+
+**Advantages of Native Setup:**
+- Better performance (no container overhead)
+- Lower resource usage
+- Easier debugging and monitoring
+- Direct system integration
+
+### Option 3: Manual Setup
+
+Follow the detailed guides:
+- `PRODUCTION_SETUP.md` for Docker-based manual setup
+- `NATIVE_SETUP.md` for native manual setup
 
 ## Prerequisites
 
