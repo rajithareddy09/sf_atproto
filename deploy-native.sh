@@ -268,6 +268,7 @@ OZONE_PUBLIC_URL="https://$DOMAIN"
 OZONE_SERVER_DID="did:web:$DOMAIN"
 OZONE_DB_POSTGRES_URL="postgresql://atproto:$DB_PASSWORD@localhost:5432/ozone"
 OZONE_DB_POSTGRES_SCHEMA="ozone"
+OZONE_DB_MIGRATE=1
 OZONE_APPVIEW_URL="http://localhost:3000"
 OZONE_APPVIEW_DID="did:web:$DOMAIN"
 OZONE_PDS_URL="http://localhost:2583"
