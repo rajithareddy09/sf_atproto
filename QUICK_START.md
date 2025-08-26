@@ -66,11 +66,34 @@ The native script will:
 - Easier debugging and monitoring
 - Direct system integration
 
-### Option 3: Manual Setup
+### Option 3: Systemd Setup (Recommended for Production)
+
+For the most reliable and Linux-native experience, use systemd for process management:
+
+```bash
+# Clone the repository
+git clone https://github.com/bluesky-social/atproto.git
+cd atproto
+
+# Follow the systemd setup guide
+# See SYSTEMD_SETUP.md for detailed instructions
+```
+
+**Advantages of Systemd Setup:**
+- Native Linux service management
+- Automatic restarts and recovery
+- Built-in dependency management
+- Native journal logging
+- Resource control and monitoring
+- Boot persistence
+- Security features
+
+### Option 4: Manual Setup
 
 Follow the detailed guides:
 - `PRODUCTION_SETUP.md` for Docker-based manual setup
-- `NATIVE_SETUP.md` for native manual setup
+- `NATIVE_SETUP.md` for native manual setup with PM2
+- `SYSTEMD_SETUP.md` for systemd-based manual setup
 
 ## Prerequisites
 

@@ -239,36 +239,46 @@ PDS_INVITE_REQUIRED=0
 PDS_DISABLE_SSRF_PROTECTION=0
 EOF
 
-    # Create BSky configuration
-    cat > /opt/atproto/bsky/.env << EOF
+          # Create BSky configuration
+      cat > /opt/atproto/bsky/.env << EOF
 # BSky AppView Configuration
-PORT=3000
+BSKY_PORT=3000
 NODE_ENV=production
-DATABASE_URL="postgresql://atproto:$DB_PASSWORD@localhost:5432/bsky_appview"
-REDIS_URL="redis://localhost:6379"
-PDS_URL="http://localhost:2583"
+BSKY_PUBLIC_URL="https://$DOMAIN"
+BSKY_SERVER_DID="did:web:$DOMAIN"
+BSKY_DID_PLC_URL="https://plc.directory"
+BSKY_DATAPLANE_URLS="http://localhost:2583"
+BSKY_BSYNC_URL="http://localhost:3002"
+BSKY_SERVICE_SIGNING_KEY="did:key:zQ3shZc2QzApp2oymGvQbzP8eKheVshBHbU4ZYjeXqwSKEn6N"
+BSKY_ADMIN_PASSWORDS="$PDS_ADMIN_PASSWORD"
+MOD_SERVICE_DID="did:web:$DOMAIN"
+BSKY_ETCD_HOSTS=""
+BSKY_DATAPLANE_HTTP_VERSION="2"
+BSKY_BSYNC_HTTP_VERSION="2"
 LOG_ENABLED=1
 LOG_LEVEL=info
 EOF
 
-    # Create Ozone configuration
-    cat > /opt/atproto/ozone/.env << EOF
+          # Create Ozone configuration
+      cat > /opt/atproto/ozone/.env << EOF
 # Ozone Configuration
-PORT=3000
+OZONE_PORT=3001
 NODE_ENV=production
-DATABASE_URL="postgresql://atproto:$DB_PASSWORD@localhost:5432/ozone"
-PDS_URL="http://localhost:2583"
+OZONE_DATABASE_URL="postgresql://atproto:$DB_PASSWORD@localhost:5432/ozone"
+OZONE_PDS_URL="http://localhost:2583"
 OZONE_ADMIN_PASSWORD="$OZONE_ADMIN_PASSWORD"
+OZONE_SERVICE_DID="did:web:$DOMAIN"
 LOG_ENABLED=1
 LOG_LEVEL=info
 EOF
 
-    # Create BSync configuration
-    cat > /opt/atproto/bsync/.env << EOF
+          # Create BSync configuration
+      cat > /opt/atproto/bsync/.env << EOF
 # BSync Configuration
-BSYNC_PORT=3000
+BSYNC_PORT=3002
 NODE_ENV=production
-PDS_URL="http://localhost:2583"
+BSYNC_PDS_URL="http://localhost:2583"
+BSYNC_SERVICE_DID="did:web:$DOMAIN"
 LOG_ENABLED=1
 LOG_LEVEL=info
 EOF
