@@ -27,7 +27,7 @@ services:
   redis_test: &redis_test
     image: redis:7.0-alpine
     ports:
-      - '6380:6379'
+      - '6379:6379'
     # Healthcheck ensures redis is queryable when `docker-compose up --wait` completes
     healthcheck:
       test: ['CMD-SHELL', '[ "$$(redis-cli ping)" = "PONG" ]']
