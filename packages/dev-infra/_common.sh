@@ -36,7 +36,7 @@ export_pg_env() {
 
 # Exports redis environment variables
 export_redis_env() {
-  export REDIS_HOST="127.0.0.1:6380"
+  export REDIS_HOST="127.0.0.1:6379"
 }
 
 pg_clear() {
