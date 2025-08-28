@@ -9,8 +9,11 @@ import { ServerEnvironment } from './env'
 
 export const envToCfg = (env: ServerEnvironment): ServerConfig => {
   const port = env.port ?? 2583
-  const hostname = 'sfproject.net'
-  const publicUrl =  `https://${hostname}`
+  const hostname = env.hostname ?? 'localhost'
+  const publicUrl =
+    hostname === 'localhost'
+      ? `http://localhost:${port}`
+      : `https://${hostname}`
   const did = env.serviceDid ?? `did:web:${hostname}`
   const serviceCfg: ServerConfig['service'] = {
     port,
@@ -23,7 +26,7 @@ export const envToCfg = (env: ServerEnvironment): ServerConfig => {
     contactEmailAddress: env.contactEmailAddress,
     acceptingImports: env.acceptingImports ?? true,
     blobUploadLimit: env.blobUploadLimit ?? 5 * 1024 * 1024, // 5mb
-    devMode: false,
+    devMode: env.devMode ?? false,
   }
 
   const dbLoc = (name: string) => {
@@ -83,7 +86,11 @@ export const envToCfg = (env: ServerEnvironment): ServerConfig => {
   if (env.serviceHandleDomains && env.serviceHandleDomains.length > 0) {
     serviceHandleDomains = env.serviceHandleDomains
   } else {
-    serviceHandleDomains = ['.sfproject.net']
+    if (hostname === 'localhost') {
+      serviceHandleDomains = ['.test']
+    } else {
+      serviceHandleDomains = [`.${hostname}`]
+    }
   }
   const invalidDomain = serviceHandleDomains.find(
     (domain) => domain.length < 1 || !domain.startsWith('.'),
