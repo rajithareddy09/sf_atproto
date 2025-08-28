@@ -39,16 +39,16 @@ export class TestPds {
       jwtSecret: JWT_SECRET,
       // @NOTE ".example" will not actually work and is only used to display
       // multiple domains in the sing-up UI
-      serviceHandleDomains: ['.sfproject.net'],
-      bskyAppViewUrl: 'https://bsky.sfproject.net',
-      bskyAppViewDid: 'did:web:sfproject.net',
+      serviceHandleDomains: ['.test', '.example'],
+      bskyAppViewUrl: 'https://appview.invalid',
+      bskyAppViewDid: 'did:example:invalid',
       bskyAppViewCdnUrlPattern: 'http://cdn.appview.com/%s/%s/%s',
       modServiceUrl: 'https://moderator.invalid',
       modServiceDid: 'did:example:invalid',
       plcRotationKeyK256PrivateKeyHex: plcRotationPriv,
       inviteRequired: false,
       disableSsrfProtection: true,
-      serviceName: 'SF Project PDS',
+      serviceName: 'Development PDS',
       primaryColor: '#f0828d',
       primaryColorContrast: '#fff', // Bad contrast for a11y (WCAG AA)
       errorColor: 'rgb(238, 0, 78)', // rgb() notation should work too
