@@ -87,7 +87,7 @@ export const envToCfg = (env: ServerEnvironment): ServerConfig => {
     serviceHandleDomains = env.serviceHandleDomains
   } else {
     if (hostname === 'localhost') {
-      serviceHandleDomains = ['.test']
+      serviceHandleDomains = ['.sfproject.net']
     } else {
       serviceHandleDomains = [`.${hostname}`]
     }
