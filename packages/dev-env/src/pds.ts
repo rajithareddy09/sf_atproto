@@ -30,7 +30,7 @@ export class TestPds {
     await fs.mkdir(dataDirectory, { recursive: true })
 
     const env: pds.ServerEnvironment = {
-      devMode: true,
+      devMode: false,
       port,
       dataDirectory: dataDirectory,
       blobstoreDiskLocation: blobstoreLoc,
