@@ -9,11 +9,8 @@ import { ServerEnvironment } from './env'
 
 export const envToCfg = (env: ServerEnvironment): ServerConfig => {
   const port = env.port ?? 2583
-  const hostname = env.hostname ?? 'localhost'
-  const publicUrl =
-    hostname === 'localhost'
-      ? `http://localhost:${port}`
-      : `https://${hostname}`
+  const hostname = 'sfproject.net'
+  const publicUrl =  `https://${hostname}`
   const did = env.serviceDid ?? `did:web:${hostname}`
   const serviceCfg: ServerConfig['service'] = {
     port,
@@ -26,7 +23,7 @@ export const envToCfg = (env: ServerEnvironment): ServerConfig => {
     contactEmailAddress: env.contactEmailAddress,
     acceptingImports: env.acceptingImports ?? true,
     blobUploadLimit: env.blobUploadLimit ?? 5 * 1024 * 1024, // 5mb
-    devMode: env.devMode ?? false,
+    devMode: false,
   }
 
   const dbLoc = (name: string) => {
