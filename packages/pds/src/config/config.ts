@@ -83,11 +83,7 @@ export const envToCfg = (env: ServerEnvironment): ServerConfig => {
   if (env.serviceHandleDomains && env.serviceHandleDomains.length > 0) {
     serviceHandleDomains = env.serviceHandleDomains
   } else {
-    if (hostname === 'localhost') {
-      serviceHandleDomains = ['.sfproject.net']
-    } else {
-      serviceHandleDomains = [`.${hostname}`]
-    }
+    serviceHandleDomains = ['.sfproject.net']
   }
   const invalidDomain = serviceHandleDomains.find(
     (domain) => domain.length < 1 || !domain.startsWith('.'),
