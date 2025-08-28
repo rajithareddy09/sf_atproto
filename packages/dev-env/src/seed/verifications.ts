@@ -114,62 +114,62 @@ export default async (sc: SeedClient) => {
 const users = {
   alice: {
     email: 'alice@test.com',
-    handle: 'alice.test',
+    handle: 'alice.sfproject.net',
     password: 'alice-pass',
   },
   bob: {
     email: 'bob@test.com',
-    handle: 'bob.test',
+    handle: 'bob.sfproject.net',
     password: 'bob-pass',
   },
   carol: {
     email: 'carol@test.com',
-    handle: 'carol.test',
+    handle: 'carol.sfproject.net',
     password: 'carol-pass',
   },
   dan: {
     email: 'dan@test.com',
-    handle: 'dan.test',
+    handle: 'dan.sfproject.net',
     password: 'dan-pass',
   },
   eve: {
     email: 'eve@test.com',
-    handle: 'eve.test',
+    handle: 'eve.sfproject.net',
     password: 'eve-pass',
   },
   frank: {
     email: 'frank@test.com',
-    handle: 'frank.test',
+    handle: 'frank.sfproject.net',
     password: 'frank-pass',
   },
   gus: {
     email: 'gus@test.com',
-    handle: 'gus.test',
+    handle: 'gus.sfproject.net',
     password: 'gus-pass',
   },
   impersonator: {
     email: 'impersonator@test.com',
-    handle: 'impersonator.test',
+    handle: 'impersonator.sfproject.net',
     password: 'impersonator-pass',
   },
   verifier1: {
     email: 'verifier1@test.com',
-    handle: 'verifier1.test',
+    handle: 'verifier1.sfproject.net',
     password: 'verifier1-pass',
   },
   verifier2: {
     email: 'verifier2@test.com',
-    handle: 'verifier2.test',
+    handle: 'verifier2.sfproject.net',
     password: 'verifier2-pass',
   },
   verifier3: {
     email: 'verifier3@test.com',
-    handle: 'verifier3.test',
+    handle: 'verifier3.sfproject.net',
     password: 'verifier3-pass',
   },
   nonverifier: {
     email: 'nonverifier@test.com',
-    handle: 'nonverifier.test',
+    handle: 'nonverifier.sfproject.net',
     password: 'nonverifier-pass',
   },
 }

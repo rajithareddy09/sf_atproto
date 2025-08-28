@@ -31,27 +31,27 @@ export default async (sc: SeedClient) => {
 const users = {
   alice: {
     email: 'alice@test.com',
-    handle: 'alice.test',
+    handle: 'alice.sfproject.net',
     password: 'alice-pass',
   },
   bob: {
     email: 'bob@test.com',
-    handle: 'bob.test',
+    handle: 'bob.sfproject.net',
     password: 'bob-pass',
   },
   carol: {
     email: 'carol@test.com',
-    handle: 'carol.test',
+    handle: 'carol.sfproject.net',
     password: 'carol-pass',
   },
   dan: {
     email: 'dan@test.com',
-    handle: 'dan.test',
+    handle: 'dan.sfproject.net',
     password: 'dan-pass',
   },
   eve: {
     email: 'eve@test.com',
-    handle: 'eve.test',
+    handle: 'eve.sfproject.net',
     password: 'eve-pass',
   },
 }

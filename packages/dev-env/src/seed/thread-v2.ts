@@ -21,7 +21,7 @@ function createUserStub(name: string): User {
     // @ts-ignore overwritten during seeding
     did: undefined,
     email: `${name}@test.com`,
-    handle: `${name}.test`,
+    handle: `${name}.sfproject.net`,
     password: `${name}-pass`,
     displayName: name,
     description: `hi im ${name} label_me`,

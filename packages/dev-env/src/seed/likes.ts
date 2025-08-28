@@ -5,7 +5,7 @@ export default async (sc: SeedClient) => {
   await basicSeed(sc)
   await sc.createAccount('eve', {
     email: 'eve@test.com',
-    handle: 'eve.test',
+    handle: 'eve.sfproject.net',
     password: 'eve-pass',
   })
   await sc.like(sc.dids.eve, sc.posts[sc.dids.alice][1].ref)
@@ -30,12 +30,12 @@ export default async (sc: SeedClient) => {
   // couple more NPCs for suggested follows
   await sc.createAccount('fred', {
     email: 'fred@test.com',
-    handle: 'fred.test',
+    handle: 'fred.sfproject.net',
     password: 'fred-pass',
   })
   await sc.createAccount('gina', {
     email: 'gina@test.com',
-    handle: 'gina.test',
+    handle: 'gina.sfproject.net',
     password: 'gina-pass',
   })
 

@@ -31,7 +31,7 @@ export default async (sc: SeedClient) => {
 const users = {
   alice: {
     email: 'alice@test.com',
-    handle: 'alice.test',
+    handle: 'alice.sfproject.net',
     password: 'alice-pass',
     displayName: 'ali',
     description: 'its me!',
@@ -39,7 +39,7 @@ const users = {
   },
   bob: {
     email: 'bob@test.com',
-    handle: 'bob.test',
+    handle: 'bob.sfproject.net',
     password: 'bob-pass',
     displayName: 'bobby',
     description: 'hi im bob label_me',
@@ -47,7 +47,7 @@ const users = {
   },
   carol: {
     email: 'carol@test.com',
-    handle: 'carol.test',
+    handle: 'carol.sfproject.net',
     password: 'carol-pass',
     displayName: undefined,
     description: undefined,
@@ -55,7 +55,7 @@ const users = {
   },
   dan: {
     email: 'dan@test.com',
-    handle: 'dan.test',
+    handle: 'dan.sfproject.net',
     password: 'dan-pass',
     displayName: undefined,
     description: undefined,

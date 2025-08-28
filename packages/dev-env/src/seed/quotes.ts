@@ -5,7 +5,7 @@ export default async (sc: SeedClient) => {
   await basicSeed(sc)
   await sc.createAccount('eve', {
     email: 'eve@test.com',
-    handle: 'eve.test',
+    handle: 'eve.sfproject.net',
     password: 'eve-pass',
   })
 
