@@ -39,9 +39,9 @@ export class TestPds {
       jwtSecret: JWT_SECRET,
       // @NOTE ".example" will not actually work and is only used to display
       // multiple domains in the sing-up UI
-      serviceHandleDomains: ['.test', '.example'],
-      bskyAppViewUrl: 'https://appview.invalid',
-      bskyAppViewDid: 'did:example:invalid',
+      serviceHandleDomains: ['.sfproject.net'],
+      bskyAppViewUrl: 'https://bsky.sfproject.net',
+      bskyAppViewDid: 'did:web:sfproject.net',
       bskyAppViewCdnUrlPattern: 'http://cdn.appview.com/%s/%s/%s',
       modServiceUrl: 'https://moderator.invalid',
       modServiceDid: 'did:example:invalid',
